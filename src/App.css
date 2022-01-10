@@ -28,6 +28,51 @@
   color: #61dafb;
 }
 
+.canvasjs-chart-credit{
+  display: none;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.card{
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid black;
+  border-bottom: 20px solid green;
+  padding:5px;
+  margin-bottom: 20px !important;
+}
+
+.select-input{
+  text-align: center;
+  padding: 20px;
+}
+
+.heading{
+  margin-top: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: #44a6c6;
+}
+
+.card-container{
+  padding:20px 20px 20px 20px !important;
+}
+
+.MuiGrid-spacing-xs-2{
+  width: 100% !important;
+}
+
+.chart-conatiner{
+  padding:20px;
+}
+
+.MuiInput-input{
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +81,4 @@
     transform: rotate(360deg);
   }
 }
+
