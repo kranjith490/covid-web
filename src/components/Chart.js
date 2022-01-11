@@ -5,7 +5,7 @@ const Chart = (props) => {
   const { data, type } = props;
   const options = {
     title: {
-      text: "Selected country view",
+      text: "",
     },
     data: [
       {

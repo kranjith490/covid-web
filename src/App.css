@@ -40,9 +40,18 @@
   border-radius: 5px;
   text-align: center;
   border: 1px solid black;
-  border-bottom: 20px solid green;
-  padding:5px;
+  padding:20px;
   margin-bottom: 20px !important;
+}
+
+.color-orange{
+color: orange;
+}
+.color-red{
+color: red;
+}
+.color-green{
+color: green;
 }
 
 .select-input{
@@ -51,10 +60,12 @@
 }
 
 .heading{
-  margin-top: 10px;
   text-align: center;
   border: 1px solid gray;
   background-color: #44a6c6;
+  padding: 10px;
+  color: white;
+
 }
 
 .card-container{
@@ -71,6 +82,10 @@
 
 .MuiInput-input{
   text-align: center;
+}
+
+.loader{
+ height: 100vh;
 }
 
 @keyframes App-logo-spin {

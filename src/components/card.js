@@ -2,20 +2,19 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 const Card = (props) => {
-  const { label, y } = props.data;
-  console.log(label, y);
-  let particular;
+  const { label, y, title } = props.data;
+  let color;
   if (label === "confirmed") {
-    particular = "Active Cases";
-  } else if (label === "recovered") {
-    particular = "Rescused";
+    color = "color-orange";
+  } else if (label === "deaths") {
+    color = color = "color-red";
   } else {
-    particular = "Death";
+    color = color = "color-green";
   }
   return (
-    <Grid lg={3} md={3} sm={12} xs={12} item className="card">
-      <Typography variant="h4">{particular}</Typography>
-      <Typography variant="h6"> Number of active cases is {y} </Typography>
+    <Grid lg={3} md={3} sm={12} xs={12} item className={`card ${color}`}>
+      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h4"> {y} </Typography>
     </Grid>
   );
 };

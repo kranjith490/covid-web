@@ -4,10 +4,19 @@ import modifyGraphData from "../../utils/modifyData";
 const SET_COUNTRY_LIST = "SET_COUNTRY_LIST";
 const SET_CHART_DATA = "SET_CHART_DATA";
 const SET_API_FAILURE = "SET_API_FAILURE";
+const SET_COUNTRY_CODE = "SET_COUNTRY_CODE";
+
 export const setCountryList = (actionType, response) => {
+  console.log("Action value", response);
   return {
     type: actionType,
     response: response,
+  };
+};
+export const setCountryCode = (actionType, countryCode) => {
+  return {
+    type: actionType,
+    countryCode: countryCode,
   };
 };
 export const setCharData = (actionType, response, countryCode) => {
@@ -24,12 +33,21 @@ export const setAPIFailure = (actionType, response) => {
     response: response,
   };
 };
+export const setLoader = (actionType, show) => {
+  return {
+    type: actionType,
+    show: show,
+  };
+};
 
 export const fetchCurrentCountry = () => {
   return (dispatch) => {
     axios
       .get(config.urls.geolocation)
       .then((response) => {
+        dispatch(
+          setCountryCode(SET_COUNTRY_CODE, response.data.location.country.code)
+        );
         dispatch(fetchChartData(response.data.location.country.code));
       })
       .catch((error) => {
