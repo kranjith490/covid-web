@@ -12,9 +12,11 @@ import Card from "../../components/card";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const { chartData, countryList, countryCode } = useSelector(
-    (state) => state.chartReducer
-  );
+  const {
+    chartData = [],
+    countryList,
+    countryCode,
+  } = useSelector((state) => state.chartReducer);
 
   const [value, setValue] = useState(countryCode);
 
@@ -42,9 +44,11 @@ const Dashboard = () => {
         />
       </Grid>
       <Grid container justifyContent="space-evenly" className="card-container">
-        {chartData.map((data, key) => {
-          return <Card data={data} key={key} />;
-        })}
+        {chartData.length > 0
+          ? chartData.map((data, key) => {
+              return <Card data={data} key={key} />;
+            })
+          : ""}
       </Grid>
 
       <Grid container className="chart-conatiner">

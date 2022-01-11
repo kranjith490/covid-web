@@ -68,10 +68,7 @@ export const fetchCountryList = () => {
   };
 };
 export const fetchChartData = (countryCode) => {
-  let url =
-    countryCode === ""
-      ? config.urls.global
-      : `${config.urls.global}countries/${countryCode}`;
+  let url = `${config.urls.countryList}${countryCode}`;
   return (dispatch) => {
     axios
       .get(url)
