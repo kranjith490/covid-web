@@ -14,7 +14,6 @@ const initialState = {
 export const chartReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_COUNTRY_LIST: {
-      console.log("CoutrynList", action.response);
       return { ...state, countryList: action.response };
     }
     case SET_COUNTRY_CODE: {
@@ -31,7 +30,6 @@ export const chartReducer = (state = initialState, action = {}) => {
       return { ...state, chartData: action.response };
     }
     case SET_LOADER_VISIBLILITY: {
-      console.log("Reducer", action.show);
       return { ...state, loader: action.show };
     }
 

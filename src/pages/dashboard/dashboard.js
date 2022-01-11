@@ -22,9 +22,6 @@ const Dashboard = () => {
     loader,
   } = useSelector((state) => state.chartReducer);
 
-  console.log("Loader", countryList, countryCode);
-
-  const [value, setValue] = useState(countryCode);
   const [graphType, setGraphType] = useState("column");
   const [chartType, setChartType] = useState(true);
 

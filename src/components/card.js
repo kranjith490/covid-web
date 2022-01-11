@@ -14,7 +14,7 @@ const Card = (props) => {
   return (
     <Grid lg={3} md={3} sm={12} xs={12} item className={`card ${color}`}>
       <Typography variant="h6">{title}</Typography>
-      <Typography variant="h4"> {y} </Typography>
+      <Typography variant="h4"> {y.toLocaleString()} </Typography>
     </Grid>
   );
 };
