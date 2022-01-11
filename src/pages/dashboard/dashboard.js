@@ -83,8 +83,8 @@ const Dashboard = () => {
                 })
               : ""}
           </Grid>
-          <Grid container justifyContent="center" className="select-input">
-            <Typography variant="h6">change chart view:</Typography>
+          <Grid container justifyContent="flex-end" className="select-input">
+            <Typography variant="h6">Toggle view:</Typography>
             <Switch
               checked={chartType}
               onChange={handleGrapthType}
