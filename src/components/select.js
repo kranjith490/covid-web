@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Select from "@material-ui/core/Select";
 
 const SelectDropdown = (props) => {
-  const { options, handleChange, value } = props;
+  const { options, handleChange, value, valueType } = props;
   return (
     <Fragment>
       <Select
@@ -12,10 +12,14 @@ const SelectDropdown = (props) => {
         label="Age"
         className="align-center"
       >
-        {options.map((country, key) => {
-          return (
-            <option value={country.iso2} key={key}>
-              {country.name}
+        {options.map((value, key) => {
+          return valueType ? (
+            <option value={value.iso2} key={key}>
+              {value}
+            </option>
+          ) : (
+            <option value={value.iso2} key={key}>
+              {value.name}
             </option>
           );
         })}

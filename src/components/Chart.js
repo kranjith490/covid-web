@@ -2,14 +2,17 @@ import React from "react";
 import { CanvasJSChart } from "canvasjs-react-charts";
 
 const Chart = (props) => {
-  const { data } = props;
+  const { data, type } = props;
   const options = {
     title: {
-      text: "Covid Status App",
+      text: "Selected country view",
     },
     data: [
       {
-        type: "column",
+        type: type,
+        startAngle: 240,
+        yValueFormatString: '##0.00"%"',
+        indexLabel: "{label} {y}",
         dataPoints: data,
       },
     ],

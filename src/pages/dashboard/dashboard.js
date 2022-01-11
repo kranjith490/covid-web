@@ -11,6 +11,7 @@ import Chart from "../../components/Chart";
 import Card from "../../components/card";
 
 const Dashboard = () => {
+  const graphList = ["column", "pie"];
   const dispatch = useDispatch();
   const {
     chartData = [],
@@ -19,6 +20,7 @@ const Dashboard = () => {
   } = useSelector((state) => state.chartReducer);
 
   const [value, setValue] = useState(countryCode);
+  const [graphType, setGraphType] = useState("column");
 
   useEffect(async () => {
     dispatch(fetchCountryList());
@@ -28,6 +30,9 @@ const Dashboard = () => {
   const handleChange = (input) => {
     setValue(input);
     dispatch(fetchChartData(input));
+  };
+  const handleGrapthType = (input) => {
+    setGraphType(input);
   };
 
   return (
@@ -50,9 +55,20 @@ const Dashboard = () => {
             })
           : ""}
       </Grid>
-
+      <Grid container justifyContent="center" className="select-input">
+        <SelectDropdown
+          value={graphType}
+          handleChange={handleGrapthType}
+          options={graphList}
+          valueType="chartinput"
+        />
+      </Grid>
       <Grid container className="chart-conatiner">
-        {JSON.stringify(chartData) === "{}" ? "" : <Chart data={chartData} />}
+        {JSON.stringify(chartData) === "{}" ? (
+          ""
+        ) : (
+          <Chart data={chartData} type={graphType} />
+        )}
       </Grid>
     </Fragment>
   );
